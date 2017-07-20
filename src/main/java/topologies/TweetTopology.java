@@ -56,7 +56,6 @@ class TweetTopology {
 		String runningMode        =  (args != null && args.length > 7) ? args[7] : "local";
 		String portNumber         =  (args != null && args.length > 8) ? args[8] :"8020";
 
-
 		
 		// now instanciate the tweet spout with the credentials
 
@@ -67,7 +66,7 @@ class TweetTopology {
 
 		// Sync with FileSystem after every 100 tuples.
 		SyncPolicy syncPolicy = new CountSyncPolicy(100);
-
+		
 		RecordFormat format = new DelimitedRecordFormat().withFieldDelimiter("|");
 
 		// Rotate files after each 128MB
